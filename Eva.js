@@ -15,18 +15,7 @@ class Eva {
     }
 
     if(exp[0] === '+') {
-      let arg1 = exp[1];
-      if(isExpression(exp[1])) {
-        const eva = new Eva();
-        arg1 = eva.eval(exp[1]);
-      }
-
-      let arg2 = exp[2];
-      if(isExpression(exp[2])) {
-        const eva = new Eva();
-        arg2 = eva.eval(exp[2]);
-      }
-      return arg1 + arg2;
+      return this.eval(exp[1]) + this.eval(exp[2]);
     }
 
     throw 'Unimplemented';
