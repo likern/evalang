@@ -1,16 +1,16 @@
 const assert = require('assert');
+const testUtil = require('./test-util');
 
 module.exports = eva => {
   // Variable expressions
-  assert.strictEqual(eva.eval(['var', 'x', 10]), 10);
-  assert.strictEqual(eva.eval('x'), 10);
-  assert.strictEqual(eva.eval(['var', 'y', 100]), 100);
-  assert.strictEqual(eva.eval('y'), 100);
+  testUtil.test(eva, `(var x 10)`, 10);
+  testUtil.test(eva, `x`, 10);
 
-  assert.strictEqual(eva.eval('VERSION'), '0.1');
-
-  assert.strictEqual(eva.eval(['var', 'isUser', 'true']), true);
-
-  assert.strictEqual(eva.eval(['var', 'z', ['*', 2, 2]]), 4);
-  assert.strictEqual(eva.eval('z'), 4);
+  testUtil.test(eva, `(var y 100)`, 100);
+  testUtil.test(eva, `y`, 100);
+  
+  testUtil.test(eva, `VERSION`, '0.1');
+  testUtil.test(eva, `(var isUser true)`, true);
+  testUtil.test(eva, `(var z (* 2 2))`, 4);
+  testUtil.test(eva, `z`, 4);
 }
