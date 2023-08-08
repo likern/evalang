@@ -4,8 +4,11 @@ const Environment = require('../Environment');
 const tests = [
   require('./self-eval-test'),
   require('./math-test'),
+  require('./comparison-test'),
   require('./variables-test'),
   require('./block-test'),
+  require('./if-test'),
+  require('./while-test'),
 ];
 
 const eva = new Eva(new Environment({
