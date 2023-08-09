@@ -1,8 +1,7 @@
-const assert = require('assert');
-const testUtil = require('./test-util');
+const {test} = require('./test-util');
 
 module.exports = eva => {
-  testUtil.test(eva, `
+  test(eva, `
     (begin
       (var counter 0)
       (var result 0)

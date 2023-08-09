@@ -1,5 +1,4 @@
-const assert = require('assert');
-const testUtil = require('./test-util');
+const {test} = require('./test-util');
 
 /**
  * (if <condition>
@@ -7,7 +6,7 @@ const testUtil = require('./test-util');
  *     <alternate>)
  */
 module.exports = eva => {
-  testUtil.test(eva, `
+  test(eva, `
     (begin
       (var x 10)
       (var y 0)

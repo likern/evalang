@@ -1,15 +1,14 @@
-const assert = require('assert');
-const testUtil = require('./test-util');
+const {test} = require('./test-util');
 
 module.exports = eva => {
-  testUtil.test(eva, `
+  test(eva, `
     (begin
       (var x 10)
       (var y 20)
       (+ (* x y) 30))
   `, 230);
 
-  testUtil.test(eva, `
+  test(eva, `
     (begin
       (var x 10)
       (begin
@@ -18,7 +17,7 @@ module.exports = eva => {
       x)
   `, 10);
 
-  testUtil.test(eva, `
+  test(eva, `
     (begin
       (var value 10)
       (var result
@@ -27,7 +26,7 @@ module.exports = eva => {
       result)
   `, 20);
 
-  testUtil.test(eva, `
+  test(eva, `
     (begin
       (var data 10)
       (var result
@@ -36,7 +35,7 @@ module.exports = eva => {
       data)
   `, 100);
 
-  testUtil.test(eva, `
+  test(eva, `
     (begin
       (var x 10)
       (var y 20)
